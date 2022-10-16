@@ -6,23 +6,22 @@ namespace ChristmasWithTypes
     [DebuggerDisplay($"{{{nameof(GetDebuggerDisplay)}(),nq}}")]
     class Program
     {
-        static void Main(string[] args, string Kris)
+        public Program()
         {
         }
 
-        private static void Main1(string[] args, string Kringle, string kris, string kris)
+        static void Main(string[] args)
         {
             var xmas = new Christmas();
 
             var xmasDay = Christmas.Day.Thursday;
 
-            //TODO set Santa's name to Kris Kringle
-            xmas.Santa = kris Kringle
-        
-                //TODO Insert 3 presents you would like for xmas.  They must be strings
-                xmas.Presents = new string[3] { };
+            //DONE set Santa's name to Kris Kringle
+            xmas.Santa = "Kris Kringle";
+                //DONE Insert 3 presents you would like for xmas.  They must be strings
+                xmas.Presents = new string[3] { "Xbox", "Nintendo Switch","iPhone X"};
 
-            //TODO Set the TreeHeight to 10
+            //DONE Set the TreeHeight to 10
             xmas.TreeHeight = 10;
 
             Console.WriteLine($"This year christmas falls on {xmasDay} \n");
@@ -37,6 +36,24 @@ namespace ChristmasWithTypes
             Console.WriteLine($"\n We like to call Santa, {xmas.Santa}");
         }
 
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
 
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
+        private string GetDebuggerDisplay()
+        {
+            return ToString();
+        }
     }
     }
